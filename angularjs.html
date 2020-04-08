@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Introduction angular js</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+td{
+    text-align: center;
+}
+
+</style>
+<script src="angular.min.js"></script>
+</head>
+<body>
+<form ng-app="">
+<table align="center">
+<tr><td colspan="2"><h1>Demande d'inscription de <br>{{ nom+" "+p }}</h1></td></tr>
+<tr><td>Nom</td><td><input type="text" ng-model="nom" placeholder="votre nom ici" required class="form-control" name="name"></td></tr>
+<tr><td>Prenom</td><td><input type="text" ng-model="p" placeholder="votre prenom ici" required class="form-control" name="prenom"></td></tr>
+<tr><td>Email</td><td><input type="text" placeholder="votre email ici" required class="form-control" name="email"></td></tr>
+<tr><td>Mot de passe:</td><td><input type="password" required class="form-control" ng-model="mdp"></td></tr>
+<tr><td>Répétez mot de passe:</td><td><input type="password" required class="form-control" ng-model="rmdp">
+<br><span class="badge badge-danger" ng-show="mdp!=rmdp">les mot de passe ne sont pas identiques</span>
+</td></tr>
+<tr><td>Age</td><td><input type="number" min="19" max= required class="form-control" name="age"></td></tr>
+<tr><td>Anné d'inscription</td><td><input required class="form-control" type="number" min="2000" ng-init="2000" ng-model="anne"><span ng-hide="anne < 2000">il y'a {{2020- anne}} ans</span></td></tr>
+<tr><td>Diplome (30caractére)</td><td><input required class="form-control" type="text" ng-model="dp">{{30-dp.length}} caractéres restants</td></tr>
+<tr><td ><input  class="form-check-input" ng-model="lu" type="checkbox">J'ai lu et j'accepte<td></td></tr>
+<tr><td  colspan="2"><input class="btn btn-success" ng-disabled="mdp!=rmdp || !lu" type="submit"></td></tr>
+
+</table>
+
+
+
+</form>
+
+
+
+</body>
+
+
+
+
+
+</html>
